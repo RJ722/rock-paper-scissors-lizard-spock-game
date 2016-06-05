@@ -47,12 +47,12 @@ def NumberToName(number):
 
 while True:
 	# Ask for name:
-	usrName1 = input("Please enter your name: ")
-	usrName2 = input("Please enter your name: ")
+	usrName1 = raw_input("Please enter your name: ")
+	usrName2 = raw_input("Please enter your name: ")
 
 	# Greetings and tell about the rules
-	print(" \t \tComputer welcomes %s to the world of ROCK-PAPER-SCISSORS-LIZARD-SPOCK" % (usrName))
-	print("\t\t" + "-" * 67 + "-" * len(usrName))
+	print(" \t \tComputer welcomes %s & %s to the world of ROCK-PAPER-SCISSORS-LIZARD-SPOCK" % (usrName1, usrname2))
+	#print("\t\t" + "-" * 67 + "-" * len(usrName))
 	print(" It's very simple\n","-" * 16,"\n Scissors cuts paper\n Paper covers rock\n Rock crushes lizard\n Lizard poisons Spock\n Spock smashes scissors\n Scissors decapitates lizard\n Lizard eats paper\n Paper disproves Spock\n Spock vaporizes rock\n\n And as it always has been\n Rock crushes scissors\n")
 	print(" CAUTION: CASE - SENSITIVE")
 	print(" " + "-" * 7 + "\n")
