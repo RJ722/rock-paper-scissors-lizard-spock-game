@@ -73,11 +73,11 @@ while True:
 			
 			# Decide the winner!
 			if usrInputNum2 == ((usrInputNum1 + 3) % 5) or usrInputNum2 == ((usrInputNum1 + 4) % 5):
-				winner = usrName2
+				winner = usrName1
 			elif compInputNum == usrInputNum:
 				winner = draw
 			else:
-				winner = usrName1
+				winner = usrName2
 			
 			# Evaluate compInput in string for to get it printed
 			compInput = NumberToName(compInputNum)
