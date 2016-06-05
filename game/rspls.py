@@ -1,6 +1,7 @@
 # Rock - Paper - Scissors - Lizard - Spock Game
 
 import random
+import getpass
 
 nameList = ["Rock", "Spock", "Paper", "Lizard", "Scissors"]
 
@@ -46,7 +47,8 @@ def NumberToName(number):
 
 while True:
 	# Ask for name:
-	usrName = input("Please enter your name: ")
+	usrName1 = input("Please enter your name: ")
+	usrName2 = input("Please enter your name: ")
 
 	# Greetings and tell about the rules
 	print(" \t \tComputer welcomes %s to the world of ROCK-PAPER-SCISSORS-LIZARD-SPOCK" % (usrName))
@@ -54,28 +56,28 @@ while True:
 	print(" It's very simple\n","-" * 16,"\n Scissors cuts paper\n Paper covers rock\n Rock crushes lizard\n Lizard poisons Spock\n Spock smashes scissors\n Scissors decapitates lizard\n Lizard eats paper\n Paper disproves Spock\n Spock vaporizes rock\n\n And as it always has been\n Rock crushes scissors\n")
 	print(" CAUTION: CASE - SENSITIVE")
 	print(" " + "-" * 7 + "\n")
-
-	# Ask for choice
-	usrInput = input(" \t \t \t Your choices are: \tRock, Paper, Scissors, Lizard, Spock \n\n Please enter your choice: ")
-
-	# Generates Computers result:
-	compInputNum = random.randrange(5)
-
+	# Print choices infront of the user
+	print(" \t \t \t Your choices are: \tRock, Paper, Scissors, Lizard, Spock) 
+	# Ask for choice and don't display it
+	usrInput1 = getpass.getpass("Please enter your choice" + str(usrname1) + ":")
+	usrInput2 = getpass.getpass("Please enter your choice" + str(usrname2) + ":") 
 
 	def game(usrInput):
 		'''
 		It decides winner on the basis that the user can only win if computer's choice is such that it is 3 more or 4 more than user's choice in cyclic manner, user draws with computer if they have same choice and computer wins in all other cases.
 		'''
 		try:
-			usrInputNum = nameToNumber(usrInput)
+			usrInputNum1 = nameToNumber(usrInput1)
+			usrInputNum2 = nameToNumber(usrInput2)
 			draw = "No one"
+			
 			# Decide the winner!
-			if compInputNum == ((usrInputNum + 3) % 5) or compInputNum == ((usrInputNum + 4) % 5):
-				winner = usrName
+			if usrInputNum2 == ((usrInputNum1 + 3) % 5) or usrInputNum2 == ((usrInputNum1 + 4) % 5):
+				winner = usrName2
 			elif compInputNum == usrInputNum:
 				winner = draw
 			else:
-				winner = "Computer"
+				winner = usrName1
 			
 			# Evaluate compInput in string for to get it printed
 			compInput = NumberToName(compInputNum)
